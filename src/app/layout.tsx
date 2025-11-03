@@ -3,6 +3,7 @@ import { Header } from '@layouts/Header';
 import '@styles/global.scss';
 import type { Metadata } from 'next';
 import { JetBrains_Mono, Lato, Nunito, Poppins } from 'next/font/google';
+import Script from 'next/script';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -45,6 +46,11 @@ const fonts = [poppins, lato, nunito, mono];
 export default function RootLayout({ children }: RootProps) {
     return (
         <html className={fonts.map(f => f.variable).join(' ')} lang='pt-br'>
+            <Script
+                defer
+                src='https://umami.vitu2002.dev/script.js'
+                data-website-id='58c4262c-89df-4d47-867c-cb5b07642c09'
+            />
             <body>
                 <PageLoad />
                 <Header />
