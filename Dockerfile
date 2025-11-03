@@ -13,9 +13,6 @@ ENV PATH="/root/.bun/bin:$PATH"
 # Create app directory
 WORKDIR /app
 
-# Copy script folder
-COPY ./scripts ./scripts
-
 # Install app dependencies (use frozen lockfile for reproducibility)
 COPY package.json package-lock.json* bun.lockb* ./
 RUN bun install --frozen-lockfiles
