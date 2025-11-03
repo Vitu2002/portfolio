@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "title": "Plataforma de Leitura Online",
+        "company": "YumMangás",
+        "role": "Desenvolvedor Full-Stack",
+        "period": {
+            "start": "2022",
+            "end": null
+        },
+        "description": [
+            "Desenvolvimento completo da plataforma de leitura de mangás com Next.js e NestJS",
+            "Implementação de autenticação, comentários, notificações e perfis",
+            "Integrações externas para marcação de progresso",
+            "Otimização de infraestrutura para escalabilidade"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Projetos Freelance",
+        "role": "Desenvolvedor Full-Stack",
+        "period": {
+            "start": "2020",
+            "end": "2023"
+        },
+        "description": [
+            "Criação de aplicações web sob demanda para clientes",
+            "Manutenção e otimização de sistemas existentes",
+            "Implementação de APIs RESTful e integrações",
+            "Exemplos: e-commerce com MercadoPago, bots de Discord"
+        ]
+    }
+]

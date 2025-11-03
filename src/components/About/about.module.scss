@@ -1,0 +1,336 @@
+.Container {
+    width: 100%;
+    min-height: 100dvh;
+    background: $background-secondary;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    gap: 1rem;
+    overflow: hidden;
+
+    .Background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+
+        img {
+            object-fit: cover;
+            filter: blur(4px) brightness(0.2);
+        }
+    }
+
+    .Main {
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 1rem;
+        z-index: 1;
+
+        .Text {
+            text-align: center;
+            font-family: $font-title;
+            font-size: 1.5rem;
+            color: $text-secondary;
+            font-weight: 300;
+
+            &:last-of-type {
+                font-size: 1rem;
+            }
+        }
+
+        .Button {
+            font-size: 1rem;
+            margin-top: 1rem;
+            padding: 0.5rem 2.5rem 0.5rem 1rem;
+            border-radius: calc($radius * 4);
+            border: 2px solid $border;
+            background-color: rgba($background, 0.5);
+            cursor: pointer;
+            transition: all 200ms ease-in;
+            margin: 0 auto;
+            width: fit-content;
+            display: flex;
+            position: relative;
+
+            .Rocket {
+                display: block;
+                transform: rotate(25deg) scale(0.2);
+                transform-origin: center center;
+                position: absolute;
+                left: -3.7rem;
+                top: -7.7rem;
+
+                .Wrap {
+                    .Inner {
+                        transform: translateY(15px) translateX(-3px);
+                        transition: 0.3s ease-in-out;
+
+                        .Fire {
+                            display: none;
+                            animation-delay: 0s;
+                            fill-opacity: 1;
+                            animation-timing-function: ease-in;
+                            stroke-width: 0px;
+                            animation-iteration-count: infinite;
+                            animation-timing-function: linear;
+                            transform-origin: 50% 50%;
+                            animation-direction: normal;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .FirePath {
+                            fill: #fc0;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .Bottom {
+                            fill: #34495e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WingBase {
+                            fill: #34495e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WingShadow {
+                            fill: #34495e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .RocketBase {
+                            fill: #34495e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .RocketShadow {
+                            fill: #34495e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowGradient {
+                            stop-color: #2dcb73;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowGradient1 {
+                            stop-color: #2ac16d;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowGradient2 {
+                            stop-color: #29b968;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowGradient3 {
+                            stop-color: #28b767;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowPathLarge {
+                            transition: 0.2s;
+                            fill: #22303e;
+                            transition: all 200ms ease-in;
+                        }
+
+                        .WindowPathSmall {
+                            fill: #22303e;
+                            transition: all 200ms ease-in;
+                        }
+                    }
+                }
+            }
+
+            &:hover {
+                .Rocket {
+                    offset-path: path(
+                        'M 150 150 C 177 -93 296 -98 346 34 C 477 322 691 -109 490 -231 C 203 -497 34 -567 92 -404 C 108 -352 219 -120 58 -271 C -93 -485 -104 -670 -179 -501 C -220 -413 -293 -263 -350 -144 C -466 71 32 -378 -16 -227 C -174 70 -452 215 -235 298 Q -10 323 93 231 Q 141 195 150 151 Z'
+                    );
+                    offset-rotate: auto; /* Faz o objeto sempre apontar para frente */
+                    animation: moveInfinity 10s linear infinite;
+                    transform: rotate(90deg) scale(0.2);
+
+                    .Wrap {
+                        .Inner {
+                            transform: translateY(0px) translateX(-3px) !important;
+
+                            .RocketBase {
+                                fill: #ffffff !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .RocketShadow {
+                                fill: #ededed !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .Bottom {
+                                fill: #2dcb73 !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .WindowPathLarge {
+                                fill: url(#SVGID_2_) !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .WindowPathSmall {
+                                fill: #28b767 !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .WingBase {
+                                fill: #e16e36 !important;
+                                stroke-width: 0px !important;
+                            }
+
+                            .WingShadow {
+                                display: block !important;
+                                fill: #fc9252 !important;
+                            }
+                        }
+                        .Fire {
+                            display: block;
+                            animation-delay: 0s;
+                        }
+
+                        .FireLeft {
+                            animation-name: FillOpacity1;
+                            animation-duration: 2.2s;
+                        }
+
+                        .FireMiddle {
+                            animation-name: FillOpacity1;
+                            animation-duration: 2s;
+                        }
+
+                        .FireRight {
+                            animation-name: FillOpacity1;
+                            animation-duration: 2.3s;
+                        }
+
+                        .FireSmallLeft {
+                            animation-name: FillOpacity2;
+                            animation-duration: 2.3s;
+                            transform-origin: bottom;
+                        }
+
+                        .FireSmallRight {
+                            animation-delay: 0.3s;
+                            animation-name: FillOpacity3;
+                            animation-duration: 3.6s;
+                            transform-origin: bottom;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wing_base {
+    fill: #34495e;
+}
+
+@keyframes FillOpacity1 {
+    0% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    50% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    100% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+}
+
+@keyframes FillOpacity2 {
+    0% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    25% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    100% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+}
+
+@keyframes FillOpacity3 {
+    0% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    67% {
+        fill-opacity: 1;
+        stroke-opacity: 1;
+    }
+
+    100% {
+        fill-opacity: 0;
+        stroke-opacity: 0;
+    }
+}
+
+@keyframes RocketMove {
+    0% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes FlyLoop {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg) scale(0.2);
+    }
+    15% {
+        transform: translateX(30px) translateY(-60px) rotate(25deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    30% {
+        transform: translateX(90px) translateY(0px) rotate(135deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    45% {
+        transform: translateX(30px) translateY(60px) rotate(225deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    60% {
+        transform: translateX(-120px) translateY(-60px) rotate(280deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    75% {
+        transform: translateX(-150px) translateY(0px) rotate(25deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    90% {
+        transform: translateX(-120px) translateY(-60px) rotate(25deg) scale(0.2); /* sobe e curva à esquerda */
+    }
+    100% {
+        transform: translateX(0px) translateY(0px) rotate(25deg) scale(0.2);
+    }
+}
+
+@keyframes moveInfinity {
+    0% {
+        offset-distance: 0%;
+    }
+    100% {
+        offset-distance: 100%;
+    }
+}

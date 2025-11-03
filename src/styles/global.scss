@@ -1,0 +1,172 @@
+// Padrões Gerais
+*,
+::after,
+::before {
+    box-sizing: border-box;
+    outline: none;
+}
+
+// Fontes e Cores (Títulos)
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-title;
+    color: $text-title;
+}
+
+// Fontes e Cores (Interativas/Primárias)
+button,
+a,
+input,
+select,
+textarea {
+    font-family: $font-primary;
+    color: $text-secondary;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 200ms ease-in;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        color: $text-primary;
+        cursor: pointer;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        color: $muted;
+        opacity: 0.8;
+    }
+}
+
+// Fontes e Cores Secundárias
+html,
+body,
+div,
+p,
+span,
+li {
+    font-family: $font-secondary;
+    color: $text-secondary;
+}
+
+// Links
+a {
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: $highlight;
+    }
+}
+
+// Botões
+button {
+    border: none;
+    background: transparent;
+}
+
+// Listas
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// SVG
+svg {
+    color: inherit;
+}
+
+// Media Queries
+body {
+    // Dispositivos Pequenos (0px a 480px)
+    font-size: 12px;
+
+    // Dispositivos Médios (481px a 768px)
+    @media (min-width: $medium-min) {
+        font-size: 16px;
+    }
+
+    // Dispositivos Grandes (769px a 1024px)
+    @media (min-width: $large-min) {
+        font-size: 20px;
+    }
+
+    // Dispositivos Extra Grandes (1025px em diante);
+    @media (min-width: $large-max) {
+        font-size: 24px;
+    }
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    legend {
+        font-family: $font-secondary;
+        font-weight: bold;
+        color: $text-secondary;
+        margin-bottom: 0.25rem;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: $radius;
+        border: 2px solid $border;
+        background-color: $background;
+
+        &:focus {
+            border-color: $highlight;
+            box-shadow: inset 0 0 0 1px $highlight;
+        }
+    }
+}
+
+/* Scrollbar */
+@mixin custom-scroll {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-corner,
+    ::-webkit-scrollbar-track {
+        background: $background;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: $border;
+        transition: all 200ms ease-in;
+        border-radius: $radius;
+
+        &:hover {
+            background-color: $highlight;
+        }
+    }
+}
+
+// Body e HTML
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $background;
+    color: $text-secondary;
+    font-family: $font-secondary;
+    overflow-x: hidden;
+    @include custom-scroll;
+}

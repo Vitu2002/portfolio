@@ -1,0 +1,216 @@
+.Container {
+    position: relative;
+    width: 100%;
+    min-height: 100dvh;
+
+    .Background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+
+    .Shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px) brightness(0.2);
+    }
+
+    .Experiences {
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 5rem 2rem;
+        z-index: 1;
+
+        .Dot {
+            width: 0.5rem;
+            height: 0.5rem;
+            left: -0.2rem;
+            border-radius: 50%;
+            background-color: $highlight;
+            position: absolute;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: calc(50% - 0.5rem);
+                left: -0.25rem;
+                width: 1rem;
+                height: 1rem;
+                border-radius: 50%;
+                background-color: $highlight;
+                opacity: 0.5;
+                animation: BreathDot 3s ease-in-out infinite;
+                box-shadow: 0 0 0.5rem $highlight;
+            }
+        }
+
+        .Title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            color: $text-title;
+            font-family: $font-title;
+            white-space: nowrap;
+
+            svg {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            .Dot {
+                display: none;
+            }
+        }
+
+        .Empty {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $text-primary;
+            font-family: $font-primary;
+            font-size: 1.25rem;
+            gap: 1rem;
+        }
+
+        .List {
+            list-style: none;
+            padding-left: 1rem;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0.5rem;
+                left: 0;
+                width: 2px;
+                height: 90%;
+                background: linear-gradient(to bottom, $highlight 60%, transparent);
+            }
+
+            .Item {
+                margin-bottom: 2rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                .ItemTitle {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: $text-primary;
+                    font-family: $font-primary;
+                    font-size: 1.15rem;
+                    margin-left: 1rem;
+
+                    &::before {
+                        content: '';
+                        width: 2rem;
+                        height: 2px;
+                        position: absolute;
+                        left: 0;
+                        background: linear-gradient(to right, $highlight 60%, transparent);
+                    }
+                }
+
+                .Metadata {
+                    display: flex;
+
+                    align-items: center;
+                    gap: 0.5rem;
+                    color: $text-secondary;
+                    font-family: $font-secondary;
+                    font-size: 0.875rem;
+                    margin-top: 0.5rem;
+                    text-shadow: $shadow-active;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        margin-left: 0.5rem;
+                        position: relative;
+
+                        &:first-of-type {
+                            margin-left: 0;
+                            &::before {
+                                display: none;
+                            }
+                        }
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: -0.5rem;
+                            width: 0.25rem;
+                            height: 0.25rem;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: $text-secondary;
+                        }
+                    }
+                }
+
+                .Description {
+                    margin-top: 0.5rem;
+                    padding-left: 1rem;
+                    color: $text-secondary;
+                    font-family: $font-secondary;
+                    font-size: 1rem;
+                    text-shadow: $shadow-active;
+                }
+            }
+        }
+    }
+}
+
+// Efeito respiração
+@keyframes BreathDot {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: $small-max) {
+    .Container {
+        .Experiences {
+            .List {
+                .Item {
+                    .ItemTitle {
+                        white-space: nowrap;
+                    }
+
+                    .Metadata {
+                        flex-wrap: wrap;
+
+                        span {
+                            margin-left: 0 !important;
+
+                            &::before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

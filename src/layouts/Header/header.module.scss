@@ -1,0 +1,145 @@
+.Header {
+    width: 100%;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    .Container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 1rem;
+        max-width: 1200px;
+        user-select: none;
+
+        .Logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .LogoText {
+                font-size: 1.5rem;
+                font-weight: 600;
+                font-family: $font-title;
+                color: $text-primary;
+            }
+
+            img {
+                animation: Spin 60s ease-in-out infinite;
+            }
+        }
+
+        .Menu {
+            overflow: hidden;
+
+            .Toggle {
+                display: flex;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                z-index: 9999;
+            }
+
+            .Nav {
+                position: absolute;
+                top: 4rem;
+                left: 100%;
+                width: 100%;
+                height: calc(100vh - 4rem);
+                background: rgba($background, 0.5);
+                backdrop-filter: blur(4px);
+                z-index: 9999;
+                transition: all 200ms ease-in;
+
+                &[data-open='true'] {
+                    left: 0;
+                }
+
+                li {
+                    width: 100%;
+                    border-bottom: 1px solid $border;
+
+                    a {
+                        display: flex;
+                        width: 100%;
+                        padding: 1rem;
+                        font-size: 1.5rem;
+                        font-weight: 600;
+                        color: $text-primary;
+                        font-family: $font-primary;
+                        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+
+                        &:hover {
+                            color: $highlight;
+                            background-color: $background;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .Background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: all 200ms ease-in;
+    }
+}
+
+.Blur {
+    background-color: rgba($background, 0.5);
+    backdrop-filter: blur(6px);
+}
+
+@media (min-width: $large-min) {
+    .Header {
+        .Container {
+            .Menu {
+                overflow: hidden;
+
+                .Toggle {
+                    display: none;
+                }
+
+                .Nav {
+                    display: flex;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    height: auto;
+                    background: transparent;
+                    backdrop-filter: none;
+                    gap: 0.25rem;
+
+                    li {
+                        border-width: 0;
+
+                        a {
+                            &:hover {
+                                border-radius: $radius;
+                                color: $highlight;
+                                background-color: $background;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes Spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

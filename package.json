@@ -9,9 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "i18next": "^25.6.0",
+    "lucide-react": "^0.544.0",
+    "next": "15.5.3",
+    "next-i18next": "^15.4.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.3"
+    "react-i18next": "^16.0.1",
+    "sass": "^1.92.1"
   },
   "devDependencies": {
     "typescript": "^5",
@@ -21,5 +26,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "@eslint/eslintrc": "^3"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

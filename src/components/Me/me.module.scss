@@ -1,0 +1,67 @@
+.Container {
+    width: 100%;
+    min-height: 100dvh;
+    background: $background;
+    position: relative;
+    padding: 8rem 2rem;
+
+    .Content {
+        max-width: 1200px;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        .Card {
+            background-color: $container;
+            padding: 1rem;
+            border-radius: $radius;
+            max-width: 400px;
+            box-shadow: $shadow;
+
+            &:hover {
+                box-shadow: $shadow-active;
+            }
+
+            .Me {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .Avatar {
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 50%;
+                }
+
+                .Texts {
+                    .Name {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        margin: 0;
+                        color: $text-primary;
+                        font-family: $font-title;
+                        line-height: 1.5rem;
+                    }
+
+                    .Job {
+                        font-size: 0.9rem;
+                        color: $text-secondary;
+                        font-family: $font-primary;
+                        line-height: 1rem;
+                    }
+                }
+            }
+
+            .Description {
+                margin-top: 2rem;
+                padding-left: 1rem;
+                color: $text-secondary;
+                font-family: $font-secondary;
+                font-size: 1rem;
+            }
+        }
+    }
+}

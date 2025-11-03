@@ -1,0 +1,76 @@
+@use 'sass:color';
+
+// Cores Principais
+$background: #0b0b0b;
+$primary: #3577ff;
+$secondary: #33a8ff;
+$highlight: #00ff9d;
+
+// Cores Complementares
+$background-secondary: #1a1a1a;
+$container: #1f1f1f;
+$component: #333333;
+$component-hover: #444444;
+$header: #1b1a1b;
+$header-transparent: #1b1a1b66;
+
+// Variações das Cores
+$primary-dark: color.adjust($primary, $lightness: -10%);
+$primary-light: color.adjust($primary, $lightness: 10%);
+$secondary-dark: color.adjust($secondary, $lightness: -10%);
+$secondary-light: color.adjust($secondary, $lightness: 10%);
+$highlight-dark: color.adjust($highlight, $lightness: -10%);
+$highlight-light: color.adjust($highlight, $lightness: 10%);
+$container-dark: color.adjust($container, $lightness: -10%);
+$container-light: color.adjust($container, $lightness: 10%);
+$component-dark: color.adjust($component, $lightness: -10%);
+$component-light: color.adjust($component, $lightness: 10%);
+
+// Doadores
+$donor-diamond: #37a5e2;
+$donor-gold: #ffba3b;
+$donor-silver: #a5a5a5;
+$donor-booster: #fa79f7;
+
+// Cores de Texto
+$text-primary: #e7e7e7;
+$text-secondary: #b0b0b0;
+$text-title: #ffffff;
+
+// Cores de Interações
+// Cores para Interações
+$interaction-primary: $primary;
+$interaction-secondary: color.adjust($secondary, $lightness: -15%);
+$interaction-highlight: color.adjust($highlight, $lightness: -15%);
+$interaction-hover: color.adjust($primary, $lightness: 15%);
+
+// Contorno e Borda
+$border-input: #444444;
+$border-input-focused: $primary;
+$shadow-active: 2px 2px 10px rgba(0, 0, 0, 0.8);
+$shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+$radius: 6px;
+
+// Cores de Suporte
+$danger: #ff4f4f;
+$error: #ee0909;
+$success: #4caf50;
+$warning: #ff9800;
+$info: #2196f3;
+$muted: #888888;
+$border: #2c2c2c;
+$visited: #858585;
+
+// Tamanho de Telas
+$small-min: 240px;
+$small-max: 480px;
+$medium-min: 481px;
+$medium-max: 768px;
+$large-min: 769px;
+$large-max: 1024px;
+
+// Fontes
+$font-title: var(--font-poppins), system-ui, -apple-system, sans-serif;
+$font-primary: var(--font-lato), system-ui, -apple-system, sans-serif;
+$font-secondary: var(--font-nunito), system-ui, -apple-system, sans;
+$font-mono: var(--font-jetbrains), system-ui, -apple-system, monospace;
