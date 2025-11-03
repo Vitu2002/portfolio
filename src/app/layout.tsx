@@ -29,8 +29,15 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://vitu2002.dev'),
     title: 'Vitu2002 | Portfólio',
     description: 'Portfólio pessoal de Vitor L.',
+    twitter: {
+        images: ['/opengraph-image.png'],
+    },
+    openGraph: {
+        images: ['/opengraph-image.png'],
+    },
 };
 
 const fonts = [poppins, lato, nunito, mono];
