@@ -49,7 +49,7 @@ export default function RootLayout({ children }: RootProps) {
             <Script
                 defer
                 src='https://umami.vitu2002.dev/script.js'
-                data-website-id='58c4262c-89df-4d47-867c-cb5b07642c09'
+                data-website-id='ddebe82f-c225-459f-a19b-d38f2d5d90cd'
             />
             <body>
                 <PageLoad />
