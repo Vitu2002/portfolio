@@ -12,6 +12,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         gap: 1rem;
 
         .Card {
@@ -149,6 +150,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (min-width: $medium-max) {
+    .Container {
+        .Content {
+            flex-direction: row;
         }
     }
 }
