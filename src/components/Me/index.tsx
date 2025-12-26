@@ -1,6 +1,30 @@
+import Stacks from '@utils/stacks.json';
 import Image from 'next/image';
 import ImageSrc from '../../../public/icon.jpg';
 import styles from './me.module.scss';
+
+function Stack({ stack, title }: StackProps) {
+    return (
+        <li>
+            <h5 className={styles.StackTitle}>{title}</h5>
+            <ul className={styles.StackList}>
+                {stack.map((stack, index) => (
+                    <li key={index} className={styles.StackItem}>
+                        <Image
+                            src={stack.icon}
+                            alt={stack.name + ' icon'}
+                            width={18}
+                            height={18}
+                            draggable={false}
+                        />
+                        {stack.name}
+                        <span className={styles.StackDescription}>{stack.description}</span>
+                    </li>
+                ))}
+            </ul>
+        </li>
+    );
+}
 
 export function Me() {
     return (
@@ -26,27 +50,46 @@ export function Me() {
                     </div>
 
                     <p className={styles.Description}>
-                        Sou um desenvolvedor autodidata apaixonado por tecnologia e criação.
-                        Trabalho tanto no front quanto no back-end, com foco em construir aplicações
-                        rápidas, organizadas e com boa experiência de uso.
-                        <br />
-                        Gosto de entender todo o fluxo — do código ao deploy — e por isso mexo com
-                        banco de dados, servidores vps, Docker e automações CI/CD com GitHub
-                        Actions.
+                        Sou um desenvolvedor full-stack autodidata, movido a cafeína ☕ e paixão por
+                        criar coisas que realmente funcionam.
                         <br />
                         <br />
-                        Fora do código, curto animes, mangás, jogos e um bom rock 🤘
+                        Construo aplicações completas do zero ao deploy: frontend moderno com
+                        Next.js e Sass/SCSS, backends robustos com NestJS, tudo tipado com
+                        TypeScript para código limpo e manutenível. Domino o fluxo inteiro —
+                        PostgreSQL + Prisma, Docker, Bun, Redis, servidores VPS e CI/CD com GitHub
+                        Actions — sempre buscando performance e escalabilidade.
+                        <br />
+                        <br />
+                        Baseado em Curitiba, Brasil (UTC-3), aberto a oportunidades remotas,
+                        freelances ou full-time internacionais. Falo português nativo e inglês
+                        avançado (confortável com documentação técnica, reuniões e comunicação
+                        diária em projetos).
+                        <br />
+                        <br />
+                        Fora das telas, recarrego com animes, mangás, jogos e rock no volume máximo
+                        🤘
                     </p>
                 </div>
-                <div className={styles.Card}>
+                <div className={styles.Stack}>
+                    <h4 className={styles.Title}>Principais Stacks</h4>
                     <ul className={styles.Stacks}>
-                        <li className={styles.Card}></li>
-                        <li className={styles.Card}></li>
-                        <li className={styles.Card}></li>
-                        <li className={styles.Card}></li>
+                        <Stack stack={Stacks.frontend} title='Front-End' />
+                        <Stack stack={Stacks.backend} title='Back-End' />
+                        <Stack stack={Stacks.devops} title='DevOps' />
+                        <Stack stack={Stacks.databases} title='Databases' />
                     </ul>
                 </div>
             </div>
         </div>
     );
+}
+
+interface StackProps {
+    stack: {
+        name: string;
+        description: string;
+        icon: string;
+    }[];
+    title: string;
 }

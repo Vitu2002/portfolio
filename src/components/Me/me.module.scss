@@ -63,5 +63,92 @@
                 font-size: 1rem;
             }
         }
+
+        .Stack {
+            width: 100%;
+            background-color: $container;
+            padding: 1rem;
+            border-radius: $radius;
+            box-shadow: $shadow;
+
+            .Title {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin: 0 0 1rem 0;
+                color: $text-primary;
+                font-family: $font-title;
+                text-align: center;
+            }
+
+            .StackTitle {
+                font-size: 1rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: $text-primary;
+                font-family: $font-title;
+            }
+
+            .StackList {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+
+                .StackItem {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 0.9rem;
+                    padding: 0.5rem 1rem;
+                    border-radius: $radius;
+                    background-color: $component;
+                    color: $text-primary;
+                    font-family: $font-primary;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        .StackDescription {
+                            opacity: 1;
+                        }
+                    }
+
+                    .StackDescription {
+                        font-size: 0.85rem;
+                        color: $text-secondary;
+                        font-family: $font-secondary;
+                        position: absolute;
+                        top: calc(100% + 0.75rem);
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        width: max-content;
+                        max-width: 150px;
+                        text-align: center;
+                        padding: 1rem;
+                        border-radius: $radius;
+                        background-color: $component;
+                        box-shadow: $shadow;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 0.3s ease;
+                        z-index: 1;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -0.5rem;
+                            left: 50%;
+                            transform: translate(-50%, 0);
+                            width: 0;
+                            height: 0;
+                            border-left: 0.5rem solid transparent;
+                            border-right: 0.5rem solid transparent;
+                            border-bottom: 0.5rem solid $component;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

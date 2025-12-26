@@ -1,0 +1,115 @@
+{
+    "frontend": [
+        {
+            "name": "Next.js",
+            "icon": "icons/nextjs.svg",
+            "description": "Framework React com SSR, SSG e roteamento automático. Uso em produção na Yomu e em todos os meus projetos recentes para performance e SEO."
+        },
+        {
+            "name": "React",
+            "icon": "icons/reactjs.svg",
+            "description": "Biblioteca para construção de interfaces reativas e componentizadas. Base de todos os meus frontends modernos."
+        },
+        {
+            "name": "Sass/SCSS",
+            "icon": "icons/sass.svg",
+            "description": "Pré-processador CSS com variáveis, nesting e mixins. Uso para estilos mais complexos e organizados."
+        },
+        {
+            "name": "Tailwind CSS",
+            "icon": "icons/tailwindcss.svg",
+            "description": "Framework utilitário que acelera o desenvolvimento de UIs responsivas e consistentes sem sair do HTML."
+        },
+        {
+            "name": "TypeScript",
+            "icon": "icons/typescript.svg",
+            "description": "Tipagem estática no JavaScript. Aplico em 100% dos meus projetos para código mais seguro e manutenível."
+        },
+        {
+            "name": "JavaScript",
+            "icon": "icons/javascript.svg",
+            "description": "Linguagem base do desenvolvimento web. Domínio sólido com foco em ES6+ e async/await."
+        }
+    ],
+    "backend": [
+        {
+            "name": "NestJS",
+            "icon": "icons/nestjs.svg",
+            "description": "Framework Node.js opinado e modular inspirado no Angular. Uso para construir backends escaláveis como no YumMangás (APIs REST, autenticação, validação)."
+        },
+        {
+            "name": "Bun",
+            "description": "Runtime JavaScript ultrarrápido, compatível com Node.js. Uso para desenvolvimento local, testes e scripts mais performáticos que o Node tradicional.",
+            "icon": "/icons/bunjs.svg"
+        },
+        {
+            "name": "Node.js",
+            "icon": "icons/nodejs.svg",
+            "description": "Runtime JavaScript server-side. Base dos meus backends e scripts de automação."
+        },
+        {
+            "name": "Express.js",
+            "icon": "icons/expressjs.svg",
+            "description": "Framework minimalista para Node.js. Uso em projetos menores ou como base para entender NestJS."
+        },
+        {
+            "name": "RESTful APIs",
+            "icon": "icons/api.svg",
+            "description": "Padrão de arquitetura para APIs previsíveis e escaláveis. Projeto e implemento rotas seguras com validação e documentação."
+        },
+        {
+            "name": "GraphQL",
+            "icon": "icons/graphql.svg",
+            "description": "Linguagem de consulta flexível para APIs. Experiência em projetos menores com Apollo Server."
+        },
+        {
+            "name": "NPM",
+            "icon": "icons/npm.svg",
+            "description": "Gerenciador de pacotes. Integro bibliotecas como MercadoPago, JWT, Nodemailer e notificações push."
+        }
+    ],
+    "devops": [
+        {
+            "name": "Docker",
+            "icon": "icons/docker.svg",
+            "description": "Containerização de aplicações. Uso para ambientes consistentes entre desenvolvimento, testes e produção."
+        },
+        {
+            "name": "Coolify",
+            "icon": "icons/coolify.svg",
+            "description": "Plataforma self-hosted para deploy automático de containers Docker com monitoramento e SSL gratuito."
+        },
+        {
+            "name": "GitHub Actions",
+            "icon": "icons/github.svg",
+            "description": "CI/CD nativo do GitHub. Configuro workflows para testes automáticos, builds e deploys contínuos."
+        }
+    ],
+    "databases": [
+        {
+            "name": "PostgreSQL",
+            "icon": "icons/postgresql.svg",
+            "description": "Banco relacional robusto. Uso principal nos meus projetos full-stack com relações complexas."
+        },
+        {
+            "name": "Redis",
+            "description": "Banco in-memory para caching, queues e sessões. Integro em aplicações para melhorar performance, como cache de queries ou filas de tarefas.",
+            "icon": "icons/redis.svg"
+        },
+        {
+            "name": "Prisma",
+            "icon": "icons/prisma.svg",
+            "description": "ORM moderno para TypeScript. Facilita queries tipadas, migrações e integração com NestJS/Next.js."
+        },
+        {
+            "name": "MongoDB",
+            "icon": "icons/mongodb.svg",
+            "description": "Banco NoSQL orientado a documentos. Experiência em projetos que precisam de flexibilidade no schema."
+        },
+        {
+            "name": "MySQL",
+            "icon": "icons/mysql.svg",
+            "description": "Banco relacional clássico. Conhecimento sólido de queries e modelagem."
+        }
+    ]
+}
